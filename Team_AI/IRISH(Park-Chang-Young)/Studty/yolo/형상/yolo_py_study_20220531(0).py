@@ -50,6 +50,12 @@ cap = cv2.VideoCapture("d.mp4") # 영상 파일일 경우
 
 while cap.isOpened():
     # 3) 이미지 가져오기
+    '''
+    - ret, img = cap.read()
+    1. cap.read()는 재생되는 비디오의 한 프레임씩 읽어온다. 비디오 프레임을 제대로 읽었다면 ret 값이 True가 되며, 실패하면 False가 된다. 필요한 경우, ret     값을 체크하여 비디오 프레임을 제대로 읽었는지 확인할 수 있다. 읽은 프레임은 img이다.
+    2. 가끔 cap이 제대로 초기화되지 않을 수도 있다. 이럴 경우 에러코드를 리턴한다. 이때 cap.isOpened() 함수를 이용해 cap이 초기화가 제대로 되었는지     확인할 수 있다. 만약 cap.isOpened()가 False이면 cap.open() 함수를 이용해 오픈하면 된다.
+    3.참고 링크 : https://m.blog.naver.com/samsjang/220500854338
+    '''
     ret, img = cap.read() # opencv를 통해 이미지를 가져옴
 
     if ret:
