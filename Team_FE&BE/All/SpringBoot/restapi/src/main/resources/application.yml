@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    maria:
+      jdbc-url: jdbc:mariadb://farmsecurity-mariadb.cj2rzn7h8clk.ap-northeast-2.rds.amazonaws.com:3306/farmsecurity?useUnicode=yes&characterEncoding=UTF-8
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: admin
+      password: 12345678
+  jpa:
+    properties:
+      hibernate:
+        #show_sql: true
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    generate-ddl: true
