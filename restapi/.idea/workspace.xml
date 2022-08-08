@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4f4a3f8-a5df-4d60-955d-d6d078d012ea" name="Changes" comment="" />
+    <list default="true" id="f4f4a3f8-a5df-4d60-955d-d6d078d012ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,15 +29,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;4d5c293320a9ef54b005e10593bdac32&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/임병찬/Documents/GitHub/FarmSecurity_Sinbmil/restapi/build.gradle",
+    "spring.configuration.checksum": "4d5c293320a9ef54b005e10593bdac32"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="restapi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="restapi" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestapiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="restapi.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.farmsecurity.restapi.RestapiApplication" />
@@ -54,6 +70,8 @@
       <updated>1659864739874</updated>
       <workItem from="1659864740305" duration="261000" />
       <workItem from="1659872423896" duration="1994000" />
+      <workItem from="1659877633428" duration="56000" />
+      <workItem from="1659877752343" duration="60000" />
     </task>
     <servers />
   </component>
