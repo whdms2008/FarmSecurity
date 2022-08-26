@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_log_check"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:title="로그 기록"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_camera"
+        android:enabled="true"
+        android:icon="@drawable/ic_camera"
+        android:title="카메라"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_user_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_user"
+        android:title="사용자"
+        app:showAsAction="always"/>
+</menu>
