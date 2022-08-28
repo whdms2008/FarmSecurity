@@ -16,6 +16,7 @@ def playsound(type, sec=30):  # type(hz, mp3) 를 sec(초) 동안 재생하는 �
 
 
 def led_On(sec=30):  # 라즈베리파이의 led를 sec(초) 동안 켜는 함수
+    print("켬")
     for x in range(17):
         for y in range(7):
             sphd.set_pixel(x, y, 1.0)  # LED모듈의 x, y 좌표에 해당하는 led를 1.0의 밝기로 켠다

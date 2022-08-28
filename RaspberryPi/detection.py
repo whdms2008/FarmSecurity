@@ -3,7 +3,7 @@ import numpy as np
 import timeit
 
 
-def detect(net, obj_link, cap, accuracy=0.7, mode=0):
+def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에서 객체를 탐지하는 함수
     # net : 가중치(.weights) 파일
     # obj_link : obj.names의 파일 경로
     # cap : 카메라 입력 cv2.Capture(카메라넘버)
@@ -30,7 +30,7 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):
         # 정보를 화면에 표시
         class_ids = []
         confidences = []  # 정확도 데이터
-        boxes = []  # 박스
+        boxes = []  # 박스1
         for out in outs:
             for detection in out:
                 scores = detection[5:]
@@ -65,19 +65,19 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):
                 cv2.rectangle(img, (x, y), (x + w, y + h), color, 1)
                 cv2.putText(img, label, (x, y), font, 1, color, 2)
                 cv2.putText(img, confi, (x, y + 30), font, 1, color, 2)
-        cv2.imwrite("return_img.jpg", img)
-        cv2.imshow("aaa.jpg", img)
+        cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
+        cv2.imshow("aaa.jpg", img)  # 탐지된 순간의 이미지를 show 한다
         if cv2.waitKey(10) & 0xFF == ord('x'):
             cap.release()
             cv2.destroyAllWindows()
             break
 
-        if "animal" in find or "bird" in find:
+        if "animal" in find or "bird" in find:  # find 변수 안에 animal 또는 bird가 들어있을 경우 객체 탐지
             print("탐지됨")
             return True
         if mode == 1:
             ttt = timeit.default_timer() - start_t
-            print(f"{ttt} 초 탐지중")
+            print(f"{round(ttt, 1)} 초 탐지중")
             if ttt > 10:
                 print("탐지됨")
                 return False
