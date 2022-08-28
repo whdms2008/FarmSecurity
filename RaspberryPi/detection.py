@@ -65,7 +65,6 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
                 cv2.rectangle(img, (x, y), (x + w, y + h), color, 1)
                 cv2.putText(img, label, (x, y), font, 1, color, 2)
                 cv2.putText(img, confi, (x, y + 30), font, 1, color, 2)
-        cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
         cv2.imshow("aaa.jpg", img)  # 탐지된 순간의 이미지를 show 한다
         if cv2.waitKey(10) & 0xFF == ord('x'):
             cap.release()
@@ -73,6 +72,7 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
             break
 
         if "animal" in find or "bird" in find:  # find 변수 안에 animal 또는 bird가 들어있을 경우 객체 탐지
+            cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
             print("탐지됨")
             return True
         if mode == 1:
