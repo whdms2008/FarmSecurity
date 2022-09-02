@@ -10,7 +10,6 @@ from upload_to_gcp import upload_gcp
 def insert(step, image):
     url = "http://15.165.86.204:8080/log/insert"
     gcp_url = "https://storage.googleapis.com/farmserity/"
-    # step = "0"
     # headers
     headers = {
         "Content-Type": "application/json"
@@ -32,7 +31,7 @@ def insert(step, image):
     # 딕셔너리를 JSON으로 변환
     data = json.dumps(temp)
 
-    # psot
+    # POST
     response = requests.post(url, headers=headers, data=data)
 
     # 상태 및 text 확인

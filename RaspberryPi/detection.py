@@ -3,9 +3,12 @@ import numpy as np
 import timeit
 
 
-# Yolo 로드
-# img = cv2.imread("bird_night_100.jpg", cv2.IMREAD_COLOR)
-def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 0번은 탐지! 1번은! 10초동안 탐지가 안될때 반환
+def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에서 객체를 탐지하는 함수
+    # net : 가중치(.weights) 파일
+    # obj_link : obj.names의 파일 경로
+    # cap : 카메라 입력 cv2.Capture(카메라넘버)
+    # accuracy : 객체 탐지 정확도 기준
+    # mode : 0은 객체 탐지를 할때, 1번은 객체 탐지가 된 이후 퇴치 여부 확인을 할때
     start_t = timeit.default_timer()
     classes = []
     with open(obj_link, "r") as f:
@@ -14,10 +17,7 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 0번은 탐지! 1번은
     output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
     colors = np.random.uniform(0, 255, size=(len(classes) - 1, 3))
     while True:
-        start_t2 = timeit.default_timer()
         ret, img = cap.read()
-        # print(ret, img)
-        # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, None, fx=0.9, fy=0.9)  # None = 절대크기 , fx, fy = 상대크기
         height, width, _ = img.shape  # 이미지 높이, 너비, 채널을 각각 저장 channels에 경우 흑백은 나오지 않는다!
 
@@ -30,7 +30,7 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 0번은 탐지! 1번은
         # 정보를 화면에 표시
         class_ids = []
         confidences = []  # 정확도 데이터
-        boxes = []  # 박스
+        boxes = []  # 박스1
         for out in outs:
             for detection in out:
                 scores = detection[5:]
@@ -65,22 +65,19 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 0번은 탐지! 1번은
                 cv2.rectangle(img, (x, y), (x + w, y + h), color, 1)
                 cv2.putText(img, label, (x, y), font, 1, color, 2)
                 cv2.putText(img, confi, (x, y + 30), font, 1, color, 2)
-        # print(class_ids)
-        terminate_t = timeit.default_timer()
-        FPS = int(1. / (terminate_t - start_t2))
-        # print(FPS)
-        cv2.putText(img, str(FPS), (50, 50), font, 1, (255, 255, 255), 2)
-        cv2.imwrite("return_img.jpg", img)
-        cv2.imshow("aaa.jpg", img)
+        cv2.imshow("aaa.jpg", img)  # 탐지된 순간의 이미지를 show 한다
         if cv2.waitKey(10) & 0xFF == ord('x'):
             cap.release()
             cv2.destroyAllWindows()
             break
 
-        if "animal" in find or "bird" in find:
+        if "animal" in find or "bird" in find:  # find 변수 안에 animal 또는 bird가 들어있을 경우 객체 탐지
+            cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
             print("탐지됨")
             return True
         if mode == 1:
             ttt = timeit.default_timer() - start_t
+            print(f"{round(ttt, 1)} 초 탐지중")
             if ttt > 10:
+                print("탐지됨")
                 return False
