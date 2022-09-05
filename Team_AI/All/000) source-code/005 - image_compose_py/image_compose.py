@@ -13,7 +13,7 @@ def sa(image, num):
     return pic  # 변경된 pic(image) 를 반환 한다.
 
 
-OUTPUT_PATH = "dataset_20220721"  # 이미지 합성 후 결과를 출력할 폴더
+OUTPUT_PATH = "dataset"  # 이미지 합성 후 결과를 출력할 폴더
 INPUT_PATHS = glob('img\\*.jpg')  # 합성에 사용할 이미지 원본 폴더 에서 .jpg 파일 들의 경로를 list 형태로 저장
 FILTER_PATHS = glob('img_filter\\*.jpg')  # 합성에 사용할 이미지 필터 폴더 에서 .jpg 파일 들의 경로를 list 형태로 저장
 FILTER_NAME = ["snow", "rain", "sundown", "night"]  # 합성에 사용한 이미지 필터의 이름
@@ -21,8 +21,9 @@ CNT = [0, 0, 0]  # animal, bird, human 순서 대로 이미지 개수를 카운�
 NAMES = ["animal", "bird", "human"]  # 사진의 클래스 종류
 
 for img in INPUT_PATHS:  # 원본 이미지 경로 리스트 에서
-    check = img.split("\\")[0][0:-4]  # 읽어온 이미지 경로를 \\ 기준으로 나눈 후 문자열 슬라이싱으로 .jpg 확장자 문자를 제거한다.
-    type_num = [i for i in range(len(NAMES)) if check in NAMES[i]][0]  # check의 문자열이 names의 몇번째 인덱스인지 반환
+    check = img.split("\\")[1][0:-4]  # 읽어온 이미지 경로를 \\ 기준으로 나눈 후 문자열 슬라이싱으로 .jpg 확장자 문자를 제거한다.
+    type_num = [i for i in range(len(NAMES)) if NAMES[i] in check ][0]  # check의 문자열이 names의 몇번째 인덱스인지 반환
+    print(check, type_num)
     CNT[type_num] += 1 # animal은 0번, bird는 1번, human은 2번으로 cnt[0] += 1 이런식으로 이미지의 개수가 추가됨
     img_data = cv2.imread(img, 1) # img(경로)에 있는 이미지를 1(COLOR)로 img_data 변수 읽어 저장한다.
     h, w, c = img_data.shape # img_data 이미지의 상태를 출력 받는다 (h : height, w: width, c:Channel )
