@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.farmsecurity">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FarmSecurity"
+        android:usesCleartextTraffic="true">
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:label="회원가입" android:name=".Sign_Up"/>
+        <activity android:label="아이디/비밀번호 찾기" android:name=".Find_Idpw"/>
+        <activity android:label="비밀번호 변경" android:name=".Change_Pw"/>
+        <activity android:label="메인화면" android:name=".Main"/>
+        <activity android:label="알림 확인" android:name=".AlarmActivity"/>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".ServiceThread"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":servicethread"></service>
+
+        <meta-data
+            android:name="notification_channel"
+            android:value="FarmSecurity" />
+        <meta-data
+            android:name="ForeGround_channel"
+            android:value="ForeGround" />
+    </application>
+
+</manifest>

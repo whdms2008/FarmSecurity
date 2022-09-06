@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "12282327609",
+    "project_id": "farmsecurity-736a5",
+    "storage_bucket": "farmsecurity-736a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12282327609:android:81b8975756b507b4e593e8",
+        "android_client_info": {
+          "package_name": "com.example.farmsecurity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12282327609-1cmnjhthe7antb02qpjv7ilig8oa76qe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMvGp-mB3AmiRXP1kY9tin15qazfKjGIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12282327609-1cmnjhthe7antb02qpjv7ilig8oa76qe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
