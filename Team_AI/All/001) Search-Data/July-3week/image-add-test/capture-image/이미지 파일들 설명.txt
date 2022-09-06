@@ -1,5 +1,0 @@
-이미지 수 확대 실험.zip => 이미지 수 확대 실험하면서 얻은 이미지들
-	<이미지 파일명 설명>
-	-> 50_dataset_4000weights.PNG : weights를 선택시에 필요한 사항들(mAP, IOU, precision, recall, f1-score)
-	-> 50_dataset_6000_test_mAP.png: 앞서 선택한 weights들로 test set 돌렸을 때의 mAP
-	-> 50_dataset_6000_train_chart.png: train할 때의 chart(각각 50개, 6000번 돌린)
