@@ -70,7 +70,6 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
             cap.release()
             cv2.destroyAllWindows()
             break
-
         if "animal" in find or "bird" in find:  # find 변수 안에 animal 또는 bird가 들어있을 경우 객체 탐지
             cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
             print("탐지됨")
