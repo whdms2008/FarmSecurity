@@ -73,14 +73,14 @@ while True:
             continue
         print("탐지됨, 객체 판별시작")
         if not detect(net, "obj.names", cap, 0.7, mode):
-            # insert("퇴치완료", "return_img.jpg")  # DB와 GCP에 데이터 전송 및 업로드
+            insert("퇴치완료", "return_img.jpg")  # DB와 GCP에 데이터 전송 및 업로드
             mode = 0
             step = 0
             print("퇴치완료")
             cap.release()
             continue
         step += 1  # 탐지 완료 후 step을 1 증가
-        # insert(step, "return_img.jpg")  # DB와 GCP에 데이터 전송 및 업로드
+        insert(step, "return_img.jpg")  # DB와 GCP에 데이터 전송 및 업로드
         print(f"{step}:단계")
         if step == 1:
             led_On(3)  # LED를 3초동안 켬
