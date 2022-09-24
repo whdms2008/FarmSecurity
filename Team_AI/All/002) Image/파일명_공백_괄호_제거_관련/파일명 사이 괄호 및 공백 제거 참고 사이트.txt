@@ -1,0 +1,7 @@
+파일명 사이 괄호 및 공백 제거 참고 사이트
+
+1. 괄호 제거
+> https://oneinfo.tistory.com/180?category=951783
+
+2. 공백 제거 
+> https://forbes.tistory.com/453

@@ -18,12 +18,16 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
     colors = np.random.uniform(0, 255, size=(len(classes) - 1, 3))
     while True:
         ret, img = cap.read()
-        img = cv2.resize(img, None, fx=0.9, fy=0.9)  # None = 절대크기 , fx, fy = 상대크기
-        height, width, _ = img.shape  # 이미지 높이, 너비, 채널을 각각 저장 channels에 경우 흑백은 나오지 않는다!
-
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        # img = cv2.resize(img, None, fx=0.9, fy=0.9)  # None = 절대크기 , fx, fy = 상대크기
+        try:
+            height, width, _ = img.shape  # 이미지 높이, 너비, 채널을 각각 저장 channels에 경우 흑백은 나오지 않는다!
+        except Exception as e:
+            height, width = img.shape
         # 객체 탐지
-        blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True,
+        blob = cv2.dnn.blobFromImage(img, 1/255, (416, 416), (0, 0, 0), True,
                                      crop=False)  # blob을 만든다, blob = 멀티 데이터 저장시 사용
+        print(blob.shape)
         net.setInput(blob)
         outs = net.forward(output_layers)  # 추론 진행
 
@@ -70,7 +74,6 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
             cap.release()
             cv2.destroyAllWindows()
             break
-
         if "animal" in find or "bird" in find:  # find 변수 안에 animal 또는 bird가 들어있을 경우 객체 탐지
             cv2.imwrite("return_img.jpg", img)  # 탐지된 순간의 이미지를 현재 경로에 "return_img.jpg" 파일을 쓴다
             print("탐지됨")
@@ -79,5 +82,5 @@ def detect(net, obj_link, cap, accuracy=0.7, mode=0):  # 입력받은 영상에�
             ttt = timeit.default_timer() - start_t
             print(f"{round(ttt, 1)} 초 탐지중")
             if ttt > 10:
-                print("탐지됨")
+                print("탐지 안됨")
                 return False
