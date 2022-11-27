@@ -387,3 +387,12 @@ __#6 참고 자료__ <br>
 :two: __2022 청소년/청년 아이디어 경진대회__ <br>
 > :running: [제출 파일 다운로드하러 가기](https://github.com/irishNoah/FarmSecurity_irish/blob/main/contest_exhibit/2022_%EC%B2%AD%EC%86%8C%EB%85%84%26%EC%B2%AD%EB%85%84/FarmSecurity(%EB%B0%95%EC%B0%BD%EC%98%81)_2022_%EC%B2%AD%EC%86%8C%EB%85%84%EC%B2%AD%EB%85%84_%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4_%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C.hwp)
 <br>
+
+# :checkered_flag: 2022 한국정보기술학회 투고 논문
+:one: __AI를 이용한 농작물 피해 완화 시스템__ <br>
+> :running: [제출 파일 다운로드하러 가기](https://github.com/irishNoah/FarmSecurity_irish/blob/main/KIIT/%EB%B0%95%EC%B0%BD%EC%98%81_AI%EB%A5%BC%EC%9D%B4%EC%9A%A9%ED%95%9C%EB%86%8D%EC%9E%91%EB%AC%BC%ED%94%BC%ED%95%B4%EC%99%84%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C.hwp)
+<br>
+
+:two: __영상인식에서 전처리 유무 및 환경변화에 따른 객체 인식률 비교__ <br>
+> :running: [제출 파일 다운로드하러 가기](https://github.com/irishNoah/FarmSecurity_irish/blob/main/KIIT/%EC%A7%84%EB%AF%BC%EC%A3%BC_%EC%98%81%EC%83%81%EC%9D%B8%EC%8B%9D%EC%97%90%EC%84%9C%EC%A0%84%EC%B2%98%EB%A6%AC%EC%9C%A0%EB%AC%B4%EB%B0%8F%ED%99%98%EA%B2%BD%EB%B3%80%ED%99%94%EC%97%90%EB%94%B0%EB%A5%B8%EA%B0%9D%EC%B2%B4%EC%9D%B8%EC%8B%9D%EB%A5%A0%EB%B9%84%EA%B5%90.hwp)
+<br>
