@@ -12,7 +12,7 @@
 ## 3. second_object_detection
 이미지 확대 실험, 논문을 검토했고, 자세한 사항은 .hwp에 정리되어 있다.
 
-case1)
+### case1)
 각각 50장, 150장
 
 animal: 멧돼지:17장, 고라니: 17장, 청설모: 16장
@@ -21,7 +21,7 @@ bird: 50장(무작위 선정)
 
 human: 50장(무작위 선정)
 
-case2)
+### case2)
 
 각각 250장, 총 750장
 
@@ -38,11 +38,11 @@ human: 250장
 
 그리고
 
-case1) original 사진 750장 6000번 돌린 map
+### case1) original 사진 750장 6000번 돌린 map
 
-case2) original 사진 750장 9000번 돌린 map
+### case2) original 사진 750장 9000번 돌린 map
 
-case3) 샤프닝 한 사진 750장 6000번 돌린 map
+### case3) 샤프닝 한 사진 750장 6000번 돌린 map
 
 를 비교했고 .hwp 정리되어 있다.
 
