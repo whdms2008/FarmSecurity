@@ -9,6 +9,8 @@
 ## 2. first_object_detection
 초반기에 크롤링으로 이미지 수집 후, 라벨링한 파일인데 별 필요 없..는 것 같다.
 
+human 데이터셋은 https://www.kaggle.com/datasets/constantinwerner/human-detection-dataset를 사용했다.
+
 ## 3. second_object_detection
 이미지 확대 실험, 논문을 검토했고, 자세한 사항은 .hwp에 정리되어 있다.
 
